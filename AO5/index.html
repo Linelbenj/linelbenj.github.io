@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Amsterdam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        header {
+            background-color: #ff4c60;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 50px;
+        }
+
+        .tile {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tile:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .tile img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .tile img:hover {
+            transform: scale(1.03);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header
+        style="background: linear-gradient(135deg, #ff4c60, #ff8880); color: white; padding: 60px 20px; border-radius: 0 0 30px 30px; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 2.8rem; margin-bottom: 10px; font-weight: 700;">Welcome to Amsterdam</h1>
+        <p style="font-size: 1.2rem; font-style: italic;">City of Canals, Culture & Cozy Corners</p>
+    </header>
+
+
+    <main class="bento">
+
+        <div class="tile" id="intro">
+            <h3>Introduction</h3>
+            <p>Amsterdam is the capital of the Netherlands, famous for its artistic heritage, canal system, and historic
+                charm. The city blends culture, creativity, and coziness in every street and corner.</p>
+        </div>
+
+        <div class="tile">
+            <img src="canals.png" alt="Canals of Amsterdam">
+            <p><strong>The beautiful canals</strong> offer a serene view of the city’s architecture and are a UNESCO
+                World Heritage site.</p>
+        </div>
+
+        <div class="tile">
+            <img src="rijksmuseum.png" alt="Rijksmuseum">
+            <p><strong>Rijksmuseum</strong> is home to masterpieces by Rembrandt, Vermeer, and Van Gogh.</p>
+        </div>
+
+        <div class="tile" id="things">
+            <h3>Things to Do</h3>
+            <ul>
+                <li>Bike around the city like a local</li>
+                <li>Take a canal cruise</li>
+                <li>Visit Anne Frank House</li>
+                <li>Explore the Jordaan neighborhood</li>
+                <li>Visit tulips garden</li>
+            </ul>
+        </div>
+
+        <div class="tile">
+            <img src="tulips.png" alt="Tulips">
+            <p><strong>Spring time</strong> brings colorful tulips across Amsterdam — a floral wonderland!</p>
+        </div>
+
+        <div class="tile" id="tips">
+            <h3>Travel Tips</h3>
+            <p>Best time to visit is April to May (tulip season) or September for mild weather and fewer tourists. Don’t
+                forget a raincoat!</p>
+        </div>
+    </main>
+
+    <div class="text-center my-4">
+        <a href="../index.html" class="btn btn-danger">Back to Main Page</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
