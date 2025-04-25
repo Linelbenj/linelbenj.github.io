@@ -57,7 +57,7 @@
 
     .row {
       gap: 1.5rem;
-      justify-content: center; /* Ensures centering of cards */
+      justify-content: center; 
     }
 
     .col-md-4 {
@@ -66,15 +66,20 @@
     }
 
     .container {
-      max-width: 100%; /* Ensure the container takes up all available space */
+      max-width: 100%; 
       padding-left: 0;
       padding-right: 0;
+    }
+
+    .back-btn {
+      margin-bottom: 20px;
     }
   </style>
 </head>
 
 <body>
   <div class="container my-5">
+    <a href="../index.html" class="btn btn-danger back-btn">Back to Main Page</a>
     <h1 class="text-center mb-4">My Gallery</h1>
     <div class="row" id="gallery"></div>
   </div>
