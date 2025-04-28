@@ -3,86 +3,93 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Simple Gallery</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      background-color: #f0f0f0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Banner styling */
+    .banner {
+      background-color: #d1d8e0; /* Grey pastel color */
+      padding: 50px 0;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-      color: #343a40;
+    .banner h1 {
+      font-size: 3rem;
       font-weight: bold;
-    }
-
-    .gallery-item {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      background-color: #dee2e6;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      font-weight: 600;
       color: #495057;
     }
 
-    .description {
-      display: none;
-      font-size: 0.9rem;
-      color: #6c757d;
+    /* Gallery Item hover effect */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .card-img-top {
-      width: 100%;
       height: 200px;
       object-fit: cover;
       object-position: center center;
     }
 
-    .card-body {
-      flex-grow: 1;
+    /* Footer Styling */
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0;
+      margin-top: 50px;
+      border-radius: 30px 30px 0 0;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .row {
-      gap: 1.5rem;
-      justify-content: center; 
-    }
-
-    .col-md-4 {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .container {
-      max-width: 100%; 
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .back-btn {
+    .footer-title {
+      font-weight: bold;
       margin-bottom: 20px;
+    }
+
+    .about-me-text {
+      font-size: 0.95rem;
+      color: #ced4da;
     }
   </style>
 </head>
 
-<body>
-  <div class="container my-5">
-    <a href="../index.html" class="btn btn-danger back-btn">Back to Main Page</a>
-    <h1 class="text-center mb-4">My Gallery</h1>
-    <div class="row" id="gallery"></div>
+<body class="bg-light">
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1 class="display-4">MY GALLERY</h1>
   </div>
+
+  <div class="container my-5">
+    <a href="../index.html" class="btn btn-danger mb-4">Back to Main Page</a>
+    <h1 class="text-center text-dark fw-bold mb-4">My Gallery</h1>
+    <div class="row g-4" id="gallery"></div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="text-center">
+    <div class="container">
+      <h5 class="footer-title mb-3">About Me</h5>
+      <p>
+        <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#aboutMeCollapse" role="button" aria-expanded="false" aria-controls="aboutMeCollapse">
+          Show More
+        </a>
+      </p>
+      <div class="collapse" id="aboutMeCollapse">
+        <div class="card card-body bg-dark border-0 about-me-text">
+          Hi! I'm Linel Benj Martin M. Monta, a passionate student of DIT 2-1. I love exploring technology, coding, and continuously improving my web development skills. This simple gallery is one of my projects to showcase my growth.
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const images = [
@@ -93,34 +100,31 @@
       { href: "album/picture5.jpg", title: "Photo 5", desc: "This is my cousins." },
       { href: "album/picture6.jpg", title: "Photo 6", desc: "This is my family." },
       { href: "album/picture7.jpg", title: "Photo 7", desc: "Love ones." },
-      { href: "album/picture8.jpg", title: "Photo 8", desc: "This is my eighth photo." },
-      { href: "album/picture9.jpg", title: "Photo 9", desc: "This is my ninth photo." },
-      { href: "album/picture10.jpg", title: "Photo 10", desc: "This is my tenth photo." }
+      { href: "album/picture8.jpg", title: "Photo 8", desc: "Champion 3x3." },
+      { href: "album/picture9.jpg", title: "Photo 9", desc: "George town." },
+      { href: "album/picture10.jpg", title: "Photo 10", desc: "Itech Basketball team" }
     ];
 
     const gallery = document.getElementById("gallery");
 
-    images.forEach((img, index) => {
+    images.forEach((img) => {
       gallery.innerHTML += `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card gallery-item" onmouseover="console.log('Hovered on: ${img.title}')" onclick="toggleDesc('desc-${index}')">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm border-0">
             <a href="${img.href}" target="_blank">
               <img src="${img.href}" class="card-img-top" alt="${img.title}">
             </a>
-            <div class="card-body">
-              <h5 class="card-title text-center">${img.title}</h5>
-              <p class="card-text description text-center" id="desc-${index}">${img.desc}</p>
+            <div class="card-body text-center">
+              <h5 class="card-title">${img.title}</h5>
+              <p class="card-text">${img.desc || "No description available."}</p>
             </div>
           </div>
         </div>
       `;
     });
-
-    function toggleDesc(id) {
-      const element = document.getElementById(id);
-      element.style.display = element.style.display === 'block' ? 'none' : 'block';
-    }
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
