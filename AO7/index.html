@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="rick&morty.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rick and Morty Character Search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #e8f0fe;
+      padding-top: 60px;
+    }
+
+    .character-card {
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .character-card img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container text-center">
+    <h1 class="mb-4 fw-bold display-4 text-primary-emphasis">
+      🧪🔍 Search Rick & Morty Characters
+    </h1>
+    <p class="lead text-muted">Find details about your favorite interdimensional beings.</p>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" id="searchInput" class="form-control" placeholder="Type character name..."
+            autocomplete="off">
+          <button class="btn btn-primary" onclick="searchCharacter()">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <a href="javascript:void(0);" class="back-btn" onclick="goBack()">← Back</a>
+
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+
+        function getPastelColorBySpecies(species) {
+          switch (species.toLowerCase()) {
+            case 'human': return '#ffe5ec';
+            case 'alien': return '#e0f7fa';
+            case 'robot': return '#f3e5f5';
+            case 'cronenberg': return '#fff3cd';
+            default: return '#e2f0cb';
+          }
+        }
+
+        async function searchCharacter() {
+          const name = document.getElementById("searchInput").value.trim();
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = "<p>Searching...</p>";
+
+          try {
+            const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${name}`);
+            const json = await response.json();
+
+            if (json.results && json.results.length > 0) {
+              const character = json.results[0];
+              const bgColor = getPastelColorBySpecies(character.species);
+
+              resultDiv.innerHTML = `
+              <div class="character-card mx-auto col-md-6" style="background-color: ${bgColor};">
+                <img src="${character.image}" alt="${character.name}">
+                <h2>${character.name}</h2>
+                <p><strong>ID:</strong> ${character.id}</p>
+                <p><strong>Status:</strong> ${character.status}</p>
+                <p><strong>Species:</strong> ${character.species}</p>
+                <p><strong>Gender:</strong> ${character.gender}</p>
+              </div>
+            `;
+            } else {
+              resultDiv.innerHTML = '<div class="alert alert-warning">No character found.</div>';
+            }
+          } catch (err) {
+            resultDiv.innerHTML = '<div class="alert alert-danger">Error loading character data.</div>';
+            console.error(err);
+          }
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
