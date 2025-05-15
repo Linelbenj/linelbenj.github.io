@@ -7,10 +7,13 @@
   <title>Simple Gallery</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    /* Banner styling */
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
     .banner {
-      background-color: #d1d8e0; /* Grey pastel color */
       padding: 50px 0;
       text-align: center;
       border-radius: 8px;
@@ -20,61 +23,49 @@
     .banner h1 {
       font-size: 3rem;
       font-weight: bold;
-      color: #495057;
-    }
-
-    /* Gallery Item hover effect */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .card-img-top {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       height: 200px;
       object-fit: cover;
-      object-position: center center;
     }
 
-    /* Footer Styling */
-    footer {
-      background-color: #343a40;
-      color: white;
-      padding: 40px 0;
-      margin-top: 50px;
-      border-radius: 30px 30px 0 0;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    .card-img-top:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
-    .footer-title {
-      font-weight: bold;
-      margin-bottom: 20px;
+    #theme-toggle {
+      z-index: 1050;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .about-me-text {
-      font-size: 0.95rem;
-      color: #ced4da;
+    body[data-bs-theme="light"] .about-me-text {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+
+    body[data-bs-theme="dark"] .about-me-text {
+      background-color: #212529;
+      color: #fff;
     }
   </style>
 </head>
 
-<body class="bg-light">
+<body data-bs-theme="light" id="body">
 
-  <!-- Banner Section -->
+  <button onclick="toggleTheme()" id="theme-toggle" class="btn btn-dark position-fixed top-0 end-0 m-3">Switch to Dark Mode</button>
+
   <div class="banner">
     <h1 class="display-4">MY GALLERY</h1>
   </div>
 
   <div class="container my-5">
     <a href="../index.html" class="btn btn-danger mb-4">Back to Main Page</a>
-    <h1 class="text-center text-dark fw-bold mb-4">My Gallery</h1>
-    <div class="row g-4" id="gallery"></div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="gallery"></div>
   </div>
 
-  <!-- Footer Section -->
   <footer class="text-center">
     <div class="container">
       <h5 class="footer-title mb-3">About Me</h5>
@@ -83,8 +74,8 @@
           Show More
         </a>
       </p>
-      <div class="collapse" id="aboutMeCollapse">
-        <div class="card card-body bg-dark border-0 about-me-text">
+      <div class="collapse about-me-section" id="aboutMeCollapse">
+        <div class="card card-body border-0 about-me-text">
           Hi! I'm Linel Benj Martin M. Monta, a passionate student of DIT 2-1. I love exploring technology, coding, and continuously improving my web development skills. This simple gallery is one of my projects to showcase my growth.
         </div>
       </div>
@@ -109,7 +100,7 @@
 
     images.forEach((img) => {
       gallery.innerHTML += `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col">
           <div class="card shadow-sm border-0">
             <a href="${img.href}" target="_blank">
               <img src="${img.href}" class="card-img-top" alt="${img.title}">
@@ -122,6 +113,24 @@
         </div>
       `;
     });
+
+    function toggleTheme() {
+      const body = document.body;
+      const toggleButton = document.getElementById("theme-toggle");
+      const currentTheme = body.getAttribute("data-bs-theme");
+
+      if (currentTheme === "dark") {
+        body.setAttribute("data-bs-theme", "light");
+        toggleButton.textContent = "Switch to Dark Mode";
+        toggleButton.classList.remove("btn-light");
+        toggleButton.classList.add("btn-dark");
+      } else {
+        body.setAttribute("data-bs-theme", "dark");
+        toggleButton.textContent = "Switch to Light Mode";
+        toggleButton.classList.remove("btn-dark");
+        toggleButton.classList.add("btn-light");
+      }
+    }
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
