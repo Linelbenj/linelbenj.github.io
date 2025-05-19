@@ -12,12 +12,20 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9fb;
+    }
+
     .header {
-      background: linear-gradient(135deg, #1e2a47, #4a4e69);
+      background: 
+        linear-gradient(135deg, rgba(30, 42, 71, 0.8), rgba(74, 78, 105, 0.8)),
+        url('background.png') center/cover no-repeat;
       padding: 50px 0;
       color: white;
       text-align: center;
       border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .header img {
@@ -25,25 +33,68 @@
       max-width: 150px;
       border: 5px solid #fff;
       margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .header img:hover {
+      transform: scale(1.05);
     }
 
     .header h2 {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-weight: bold;
       font-size: 2rem;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .header h3 {
-      font-family: 'Arial', sans-serif;
-      font-weight: lighter;
-      font-size: 1.2rem;
+    .card {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body a {
+      font-weight: bold;
+      color: #4a4e69;
+    }
+
+    .card-body a:hover {
+      color: #22223b;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #22223b;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+    }
+
+    .bg-dark {
+      background-color: #343a40 !important;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Header -->
   <div class="container-fluid header">
     <div class="container">
       <div class="row align-items-center">
@@ -52,122 +103,117 @@
         </div>
         <div class="col-md-10">
           <h2 class="mb-0">LINEL BENJ MARTIN M. MONTA</h2>
-          <h3 class="mb-0">DIT 2-1</h3>
+          <h4 class="mb-0">DIT 2-1</h4>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container mt-4 text-center">
+  <!-- About -->
+  <div class="container mt-5 text-center">
     <h3>About Me</h3>
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          Hi! I'm Linel Benj Martin M. Monta, a dedicated student from DIT 2-1 with a passion for technology and web
-          development.
-          This website showcases some of my assignments as I continue to grow my skills in front-end design and
-          development.
-        </p>
-      </div>
-    </div>
+    <p class="lead">Hi! I'm Linel Benj Martin M. Monta, a dedicated student from DIT 2-1 with a passion for technology and web
+      development. This website showcases some of my assignments as I continue to grow my skills in front-end design and
+      development.</p>
   </div>
 
-  <div class="container mt-4">
-    <h3>ASSIGNMENTS</h3>
-    <div class="row mt-3">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+  <!-- Assignments -->
+  <div class="container mt-5">
+    <h3 class="text-center">Projects</h3>
+    <div class="row mt-4">
+      <!-- A04 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
           <img src="macbook13.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">A04</h5>
-            <p class="card-text">The MacBook Air is a line of Mac laptop computers developed and manufactured by Apple
-              since 2008. It features a thin, light structure in a machined aluminum case and currently either a 13-inch
-              or 15-inch screen.</p>
-          </div>
-          <div class="card-body">
-            <a href="AO4/index.html" class="card-link">Click</a>
+            <p class="card-text">Learn about the MacBook Air, a lightweight and powerful laptop by Apple with a sleek design and performance capabilities.</p>
+            <a href="AO4/index.html" class="mt-auto card-link">Click</a>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <!-- A05 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
           <img src="amsterdam.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">A05</h5>
-            <p class="card-text">Amsterdam is the capital and largest city of the Netherlands, known for its intricate
-              network of canals and its liberal culture. It's also a major economic and financial center. While
-              Amsterdam is the capital, the government and parliament are located in The Hague.</p>
-          </div>
-          <div class="card-body">
-            <a href="AO5/index.html" class="card-link">Click</a>
+            <p class="card-text">Explore Amsterdam's rich cultural heritage, picturesque canals, and its role as the capital of the Netherlands.</p>
+            <a href="AO5/index.html" class="mt-auto card-link">Click</a>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <!-- A06 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
           <img src="gallery.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">A06</h5>
-            <p class="card-text">MY GALLERY.</p>
-          </div>
-          <div class="card-body">
-            <a href="AO6/index.html" class="card-link">Click</a>
+            <p class="card-text">A personal image gallery showcasing creativity, moments, and interests visually.</p>
+            <a href="AO6/index.html" class="mt-auto card-link">Click</a>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <!-- A07 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
           <img src="rickmorty.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">A07</h5>
-            <p class="card-text">"Rick and Morty" is a science fiction animated sitcom about Rick Sanchez, a genius
-              alcoholic scientist, and his grandson, Morty Smith.</p>
-          </div>
-          <div class="card-body">
-            <a href="AO7/index.html" class="card-link">Click</a>
+            <p class="card-text">Explore "Rick and Morty" and my interactive project featuring characters from the show.</p>
+            <a href="AO7/index.html" class="mt-auto card-link">Click</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid mt-5 py-5 text-white" style="background-color: #343a40;">
-    <div class="container text-center">
-      <h3 class="mb-4">Contact Information</h3>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-3 border rounded bg-dark h-100">
-            <i class="bi bi-envelope-fill fs-3 mb-2"></i>
-            <h5>Email</h5>
-            <p>montalinelmartin@gmail.com</p>
-          </div>
-        </div>
+  <!-- Contact Info -->
+  <div class="container-fluid text-white bg-dark">
+    <div class="container py-3 text-center">
+      <button class="btn btn-outline-light mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#contactCollapse" aria-expanded="false" aria-controls="contactCollapse">
+        Contact Information
+      </button>
 
-        <div class="col-md-4">
-          <div class="p-3 border rounded bg-dark h-100">
-            <i class="bi bi-telephone-fill fs-3 mb-2"></i>
-            <h5>Phone</h5>
-            <p>+63 962 773 0466</p>
+      <div class="collapse" id="contactCollapse">
+        <div class="row g-4 pb-4">
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-secondary h-100">
+              <i class="bi bi-envelope-fill fs-3 mb-2"></i>
+              <h5>Email</h5>
+              <p>montalinelmartin@gmail.com</p>
+            </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="p-3 border rounded bg-dark h-100">
-            <i class="bi bi-share-fill fs-3 mb-2"></i>
-            <h5>Social Media</h5>
-            <p>
-              <a href="https://www.facebook.com/linelio22/" class="text-white text-decoration-none" target="_blank">
-                <i class="bi bi-facebook"></i> Facebook
-              </a><br>
-              <a href="https://www.instagram.com/benjmonta/" class="text-white text-decoration-none" target="_blank">
-                <i class="bi bi-instagram"></i> Instagram
-              </a>
-            </p>
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-secondary h-100">
+              <i class="bi bi-telephone-fill fs-3 mb-2"></i>
+              <h5>Phone</h5>
+              <p>+63 962 773 0466</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-secondary h-100">
+              <i class="bi bi-share-fill fs-3 mb-2"></i>
+              <h5>Social Media</h5>
+              <p>
+                <a href="https://www.facebook.com/linelio22/" class="text-white text-decoration-none" target="_blank">
+                  <i class="bi bi-facebook"></i> Facebook
+                </a><br>
+                <a href="https://www.instagram.com/benjmonta/" class="text-white text-decoration-none" target="_blank">
+                  <i class="bi bi-instagram"></i> Instagram
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="footer-text mb-0">&copy; 2025 Linel Benj Martin M. Monta. All Rights Reserved.</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"

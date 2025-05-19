@@ -2,76 +2,75 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" href="rick&morty.png" type="image/png" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Character Details</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #e8f0fe;
-      padding-top: 40px;
-    }
+    <link rel="icon" href="rick&morty.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Character Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #e8f0fe;
+            padding-top: 40px;
+        }
 
-    .character-card {
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      max-width: 600px;
-      margin: auto;
-    }
+        .character-card {
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+        }
 
-    .character-card img {
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
+        .character-card img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
 
-    h1 {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .back-link {
-      margin-top: 20px;
-      display: block;
-      text-align: center;
-    }
-  </style>
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Character Details</h1>
-    <div id="character-details" class="character-card">
-      <p>Loading character details...</p>
+    <div class="container">
+        <h1>Character Details</h1>
+        <div id="character-details" class="character-card">
+            <p>Loading character details...</p>
+        </div>
+        <a href="index.html" class="btn btn-secondary back-link">&larr; Back to Characters</a>
     </div>
-    <a href="index.html" class="btn btn-secondary back-link">&larr; Back to Characters</a>
-  </div>
 
-  <script>
-    // Get ID from URL params
-    const urlParams = new URLSearchParams(window.location.search);
-    const characterId = urlParams.get('id');
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('id');
 
-    async function loadCharacter(id) {
-      const container = document.getElementById('character-details');
-      if (!id) {
-        container.innerHTML = '<div class="alert alert-warning">No character ID provided.</div>';
-        return;
-      }
+        async function loadCharacter(id) {
+            const container = document.getElementById('character-details');
+            if (!id) {
+                container.innerHTML = '<div class="alert alert-warning">No character ID provided.</div>';
+                return;
+            }
 
-      try {
-        const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-        if (!res.ok) throw new Error('Character not found');
-        const character = await res.json();
+            try {
+                const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+                if (!res.ok) throw new Error('Character not found');
+                const character = await res.json();
 
-        container.innerHTML = `
+                container.innerHTML = `
           <img src="${character.image}" alt="${character.name}" />
           <h2>${character.name}</h2>
           <p><strong>ID:</strong> ${character.id}</p>
@@ -83,16 +82,16 @@
           <p><strong>Location:</strong> ${character.location.name}</p>
           <p><strong>Number of Episodes:</strong> ${character.episode.length}</p>
         `;
-      } catch (error) {
-        container.innerHTML = '<div class="alert alert-danger">Error loading character data.</div>';
-        console.error(error);
-      }
-    }
+            } catch (error) {
+                container.innerHTML = '<div class="alert alert-danger">Error loading character data.</div>';
+                console.error(error);
+            }
+        }
 
-    loadCharacter(characterId);
-  </script>
+        loadCharacter(characterId);
+    </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
