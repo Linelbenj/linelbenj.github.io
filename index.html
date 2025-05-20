@@ -5,55 +5,100 @@
   <link rel="icon" href="letter.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Linel Website</title>
+  <title>Linel Benj | Web Developer</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9fb;
+      background: #0f0f1b;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
     }
 
-    .header {
-      background: 
-        linear-gradient(135deg, rgba(30, 42, 71, 0.8), rgba(74, 78, 105, 0.8)),
-        url('background.png') center/cover no-repeat;
-      padding: 50px 0;
+    .navbar-custom {
+      background-color: #0f0f1b;
+      padding: 1rem 0;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
       color: white;
+      font-weight: 500;
+    }
+
+    .navbar-custom .nav-link:hover {
+      color: #b8b8ff;
+    }
+
+    .btn-contact {
+      background-color: #6c38ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
       text-align: center;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #0f0f1b;
     }
 
-    .header img {
+    .hero-image {
+      background: url('profile.png') center center/cover no-repeat;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
-      max-width: 150px;
-      border: 5px solid #fff;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
+      margin-bottom: 30px;
+      border: 5px solid #6c38ff;
     }
 
-    .header img:hover {
-      transform: scale(1.05);
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
-    .header h2 {
-      font-weight: bold;
+    .hero-text .gray {
+      color: #a1a1aa;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #e4e4e7;
+    }
+
+    .projects {
+      background: #f9f9fb;
+      color: #000;
+      padding: 60px 20px;
+    }
+
+    .projects h3 {
+      font-weight: 700;
       font-size: 2rem;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 40px;
     }
 
     .card {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
     }
 
     .card-img-top {
@@ -61,163 +106,119 @@
       object-fit: cover;
     }
 
-    .card-body a {
-      font-weight: bold;
-      color: #4a4e69;
-    }
-
-    .card-body a:hover {
-      color: #22223b;
-    }
-
-    h3 {
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
     footer {
       background-color: #22223b;
       color: white;
-      padding: 20px 0;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    .footer-text {
-      font-size: 0.9rem;
+    footer a {
+      color: #cfcfff;
     }
 
-    .bg-dark {
-      background-color: #343a40 !important;
+    footer a:hover {
+      color: #ffffff;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Header -->
-  <div class="container-fluid header">
+  <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-2 text-center">
-          <img src="profile.png" alt="linelbenj" class="img-fluid rounded-circle">
-        </div>
-        <div class="col-md-10">
-          <h2 class="mb-0">LINEL BENJ MARTIN M. MONTA</h2>
-          <h4 class="mb-0">DIT 2-1</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- About -->
-  <div class="container mt-5 text-center">
-    <h3>About Me</h3>
-    <p class="lead">Hi! I'm Linel Benj Martin M. Monta, a dedicated student from DIT 2-1 with a passion for technology and web
-      development. This website showcases some of my assignments as I continue to grow my skills in front-end design and
-      development.</p>
-  </div>
-
-  <!-- Assignments -->
-  <div class="container mt-5">
-    <h3 class="text-center">Projects</h3>
-    <div class="row mt-4">
-      <!-- A04 -->
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100">
-          <img src="macbook13.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">A04</h5>
-            <p class="card-text">Learn about the MacBook Air, a lightweight and powerful laptop by Apple with a sleek design and performance capabilities.</p>
-            <a href="AO4/index.html" class="mt-auto card-link">Click</a>
-          </div>
-        </div>
-      </div>
-      <!-- A05 -->
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100">
-          <img src="amsterdam.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">A05</h5>
-            <p class="card-text">Explore Amsterdam's rich cultural heritage, picturesque canals, and its role as the capital of the Netherlands.</p>
-            <a href="AO5/index.html" class="mt-auto card-link">Click</a>
-          </div>
-        </div>
-      </div>
-      <!-- A06 -->
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100">
-          <img src="gallery.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">A06</h5>
-            <p class="card-text">A personal image gallery showcasing creativity, moments, and interests visually.</p>
-            <a href="AO6/index.html" class="mt-auto card-link">Click</a>
-          </div>
-        </div>
-      </div>
-      <!-- A07 -->
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100">
-          <img src="rickmorty.png" class="card-img-top" alt="linelbenj">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">A07</h5>
-            <p class="card-text">Explore "Rick and Morty" and my interactive project featuring characters from the show.</p>
-            <a href="AO7/index.html" class="mt-auto card-link">Click</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Info -->
-  <div class="container-fluid text-white bg-dark">
-    <div class="container py-3 text-center">
-      <button class="btn btn-outline-light mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#contactCollapse" aria-expanded="false" aria-controls="contactCollapse">
-        Contact Information
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-contact ms-3" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <div class="collapse" id="contactCollapse">
-        <div class="row g-4 pb-4">
-          <div class="col-md-4">
-            <div class="p-3 border rounded bg-secondary h-100">
-              <i class="bi bi-envelope-fill fs-3 mb-2"></i>
-              <h5>Email</h5>
-              <p>montalinelmartin@gmail.com</p>
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-text">
+      <h1>I’m Linel.<br><span class="gray">  Web Developer based in the Philippines.</span></h1>
+      <p>I'm a passionate student who's excited to work on awesome projects.</p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <h3 class="text-center">Projects</h3>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="macbook13.png" class="card-img-top" alt="A04">
+            <div class="card-body">
+              <h5 class="card-title">A04: MacBook Air</h5>
+              <p class="card-text">Learn about the MacBook Air and its sleek, powerful design.</p>
+              <a href="AO4/index.html" class="card-link">View Project</a>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="p-3 border rounded bg-secondary h-100">
-              <i class="bi bi-telephone-fill fs-3 mb-2"></i>
-              <h5>Phone</h5>
-              <p>+63 962 773 0466</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="amsterdam.png" class="card-img-top" alt="A05">
+            <div class="card-body">
+              <h5 class="card-title">A05: Amsterdam</h5>
+              <p class="card-text">Explore Amsterdam's rich culture and picturesque canals.</p>
+              <a href="AO5/index.html" class="card-link">View Project</a>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="p-3 border rounded bg-secondary h-100">
-              <i class="bi bi-share-fill fs-3 mb-2"></i>
-              <h5>Social Media</h5>
-              <p>
-                <a href="https://www.facebook.com/linelio22/" class="text-white text-decoration-none" target="_blank">
-                  <i class="bi bi-facebook"></i> Facebook
-                </a><br>
-                <a href="https://www.instagram.com/benjmonta/" class="text-white text-decoration-none" target="_blank">
-                  <i class="bi bi-instagram"></i> Instagram
-                </a>
-              </p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="gallery.png" class="card-img-top" alt="A06">
+            <div class="card-body">
+              <h5 class="card-title">A06: My Gallery</h5>
+              <p class="card-text">A personal image gallery showcasing creativity and moments.</p>
+              <a href="AO6/index.html" class="card-link">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="rickmorty.png" class="card-img-top" alt="A07">
+            <div class="card-body">
+              <h5 class="card-title">A07: Rick & Morty API</h5>
+              <p class="card-text">Explore Rick and Morty through my interactive character viewer.</p>
+              <a href="AO7/index.html" class="card-link">View Project</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="footer-text mb-0">&copy; 2025 Linel Benj Martin M. Monta. All Rights Reserved.</p>
+  <footer id="contact">
+    <div class="container">
+      <h4 class="mb-3">Contact Information</h4>
+      <p>Email: <a href="mailto:montalinelmartin@gmail.com">montalinelmartin@gmail.com</a></p>
+      <p>Phone: <a href="tel:+639627730466">+63 962 773 0466</a></p>
+      <p>
+        <a href="https://www.facebook.com/linelio22/" target="_blank">
+          <i class="bi bi-facebook"></i> Facebook
+        </a> |
+        <a href="https://www.instagram.com/benjmonta/" target="_blank">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+      </p>
+      <p class="mt-3">&copy; 2025 Linel Benj Martin M. Monta. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
