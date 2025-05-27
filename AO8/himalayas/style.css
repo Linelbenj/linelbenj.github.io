@@ -75,3 +75,24 @@ footer {
 	margin: 0;
 	padding: 0;
 }
+ body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #dbe9f4, #ffffff);
+      color: #2c3e50;
+      overflow-x: hidden;
+    }
+
+    .himalaya-img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .himalaya-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button:hover {
+      background-color: #34495e;
+    }
