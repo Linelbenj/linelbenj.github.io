@@ -38,11 +38,15 @@
 </head>
 
 <body>
+  <div class="container mb-3">
+    <button class="btn btn-secondary" onclick="history.back()">
+      ← Back
+    </button>
+  </div>
   <div class="container text-center">
     <h1 class="mb-4 fw-bold display-4 text-primary-emphasis">🧪 Rick & Morty Characters</h1>
     <p class="lead text-muted">Showing a limited number of characters.</p>
 
-    <!-- Search bar -->
     <div class="input-group mb-4 w-75 mx-auto">
       <input type="text" id="searchInput" class="form-control" placeholder="Search character by name...">
       <button class="btn btn-primary" onclick="searchCharacters()">Search</button>
