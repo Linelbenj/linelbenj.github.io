@@ -42,11 +42,19 @@
     <h1 class="mb-4 fw-bold display-4 text-primary-emphasis">🧪 Rick & Morty Characters</h1>
     <p class="lead text-muted">Showing a limited number of characters.</p>
 
+    <!-- Search bar -->
+    <div class="input-group mb-4 w-75 mx-auto">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search character by name...">
+      <button class="btn btn-primary" onclick="searchCharacters()">Search</button>
+    </div>
+
     <div id="characters" class="row g-4 justify-content-center"></div>
   </div>
 
   <script>
     const MAX_CHARACTERS = 100;
+    let allCharacters = [];
+
     async function loadCharacters(limit) {
       const container = document.getElementById("characters");
       container.innerHTML = "<p>Loading characters...</p>";
@@ -59,32 +67,47 @@
           const data = await res.json();
           characters = characters.concat(data.results);
           page++;
-
-          if (!data.info.next) break; 
+          if (!data.info.next) break;
         }
 
-        characters = characters.slice(0, limit); 
-        container.innerHTML = "";
-
-        characters.forEach(character => {
-          const card = document.createElement("div");
-          card.className = "col-md-4 col-lg-3";
-
-          card.innerHTML = `
-            <div class="character-card h-100">
-              <img src="${character.image}" alt="${character.name}" />
-              <h5>${character.name}</h5>
-              <p><strong>ID:</strong> ${character.id}</p>
-              <a href="view.html?id=${character.id}" class="btn btn-outline-primary btn-sm btn-view">View</a>
-            </div>
-          `;
-
-          container.appendChild(card);
-        });
+        allCharacters = characters.slice(0, limit);
+        displayCharacters(allCharacters);
       } catch (error) {
         container.innerHTML = '<div class="alert alert-danger">Failed to load characters.</div>';
         console.error(error);
       }
+    }
+
+    function displayCharacters(characterList) {
+      const container = document.getElementById("characters");
+      container.innerHTML = "";
+
+      if (characterList.length === 0) {
+        container.innerHTML = '<div class="alert alert-warning">No characters found.</div>';
+        return;
+      }
+
+      characterList.forEach(character => {
+        const card = document.createElement("div");
+        card.className = "col-md-4 col-lg-3";
+
+        card.innerHTML = `
+          <div class="character-card h-100">
+            <img src="${character.image}" alt="${character.name}" />
+            <h5>${character.name}</h5>
+            <p><strong>ID:</strong> ${character.id}</p>
+            <a href="view.html?id=${character.id}" class="btn btn-outline-primary btn-sm btn-view">View</a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function searchCharacters() {
+      const keyword = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = allCharacters.filter(char => char.name.toLowerCase().includes(keyword));
+      displayCharacters(filtered);
     }
 
     loadCharacters(MAX_CHARACTERS);
