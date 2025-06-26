@@ -5,169 +5,169 @@
   <link rel="icon" href="letter.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Linel Benj | Web Developer</title>
+  <title>Linel Monta</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f0e6;
-      color: #5d3a1a;
-      margin: 0;
-      padding: 0;
-    }
+   body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right top, #f0f0f0, #e9e9e9);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+}
 
-    .navbar-custom {
-      background-color: #d7c4a3;
-      padding: 1rem 0;
-    }
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
 
-    .navbar-custom .nav-link,
-    .navbar-custom .navbar-brand {
-      color: #5d3a1a;
-      font-weight: 500;
-    }
+.navbar-custom {
+  background-color: transparent;
+  padding: 1rem 0;
+}
 
-    .navbar-custom .nav-link:hover {
-      color: #a37c50;
-    }
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: #555;
+  font-weight: 500;
+}
 
-    .btn-contact {
-      background-color: #b58968;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: 600;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
+.navbar-custom .nav-link:hover {
+  color: #888;
+}
 
-    .btn-contact:hover {
-      background-color: #8c6d4c;
-      color: #fff;
-    }
+.btn-contact {
+  background-color: #c0c0c0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease;
+}
 
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      text-align: center;
-      background-color: #f5f0e6;
-      gap: 40px;
-    }
+.btn-contact:hover {
+  background-color: #999999;
+  color: #fff;
+}
 
-    .hero-image {
-      background: url('profile.png') center center/cover no-repeat;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      border: 5px solid #b58968;
-      margin-bottom: 0;
-      flex-shrink: 0;
-    }
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: transparent;
+  gap: 40px;
+}
 
-    .hero-text {
-      max-width: 500px;
-      padding: 0 20px;
-    }
+.hero-image {
+  background: url('profile.png') center center/cover no-repeat;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
 
-    .hero-text h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 15px;
-      color: #5d3a1a;
-    }
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #444;
+}
 
-    .hero-text .gray {
-      color: #a37c50;
-    }
+.hero-text .gray {
+  color: #888;
+}
 
-    .hero-text p {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #7d5f3d;
-    }
+.hero-text p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+}
 
-    .projects {
-      background: #e6ddd2;
-      color: #5d3a1a;
-      padding: 60px 20px;
-    }
+.projects {
+  padding: 60px 20px;
+}
 
-    .projects h3 {
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #5d3a1a;
-    }
+.projects h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #444;
+}
 
-    .card {
-      border: none;
-      box-shadow: 0 4px 20px rgba(93, 58, 26, 0.15);
-      transition: transform 0.3s;
-      background: #fff7e6;
-      color: #5d3a1a;
-    }
+.card {
+  border: none;
+  transition: transform 0.3s;
+  background: rgba(255, 255, 255, 0.5);
+  color: #444;
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 25px rgba(93, 58, 26, 0.3);
-    }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
 
-    .card-img-top {
-      height: 180px;
-      object-fit: cover;
-    }
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
 
+.about {
+  padding: 60px 20px;
+}
 
-    .about {
-      background: #d7c4a3;
-      color: #5d3a1a;
-      padding: 60px 20px;
-    }
+.about h3 {
+  color: #444;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
 
-    .about h3 {
-      color: #5d3a1a;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
+.about ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
 
-    .about ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1rem;
-    }
+.about ul li {
+  margin-bottom: 10px;
+}
 
-    .about ul li {
-      margin-bottom: 10px;
-    }
+footer {
+  background-color: transparent;
+  color: #222;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-    footer {
-      background-color: #a37c50;
-      color: #fff7e6;
-      padding: 40px 20px;
-      text-align: center;
-    }
+footer a {
+  color: #333;
+  text-decoration: underline;
+}
 
-    footer a {
-      color: #fff7e6;
-      text-decoration: underline;
-    }
-
-    footer a:hover {
-      color: #f5f0e6;
-    }
+footer a:hover {
+  color: #111;
+}
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom glass mx-3 mt-3 rounded-3">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"
@@ -190,10 +190,12 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-image"></div>
-    <div class="hero-text">
-      <h1>I’m Linel.<br><span class="gray"> Web Developer / IT Student</span></h1>
-      <p>I'm a passionate student who's excited to work on awesome projects.</p>
+    <div class="glass p-4 d-flex flex-column align-items-center text-center">
+      <div class="hero-image"></div>
+      <div class="hero-text">
+        <h1>I’m Linel.<br><span class="gray"> Web Developer / IT Student</span></h1>
+        <p>I'm a passionate student who's excited to work on awesome projects.</p>
+      </div>
     </div>
   </section>
 
@@ -202,7 +204,7 @@
       <h3 class="text-center">Projects</h3>
       <div class="row">
         <div class="col-md-3 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 glass">
             <img src="macbook13.png" class="card-img-top" alt="A04">
             <div class="card-body">
               <h5 class="card-title">A04: MacBook Air</h5>
@@ -212,7 +214,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 glass">
             <img src="amsterdam.png" class="card-img-top" alt="A05">
             <div class="card-body">
               <h5 class="card-title">A05: Amsterdam</h5>
@@ -222,7 +224,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 glass">
             <img src="gallery.png" class="card-img-top" alt="A06">
             <div class="card-body">
               <h5 class="card-title">A06: My Gallery</h5>
@@ -232,7 +234,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 glass">
             <img src="rickmorty.png" class="card-img-top" alt="A07">
             <div class="card-body">
               <h5 class="card-title">A07: Rick & Morty API</h5>
@@ -242,12 +244,11 @@
           </div>
         </div>
         <div class="col-md-3 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 glass">
             <img src="mt.himalayas bg.png" class="card-img-top" alt="A08">
             <div class="card-body">
               <h5 class="card-title">A08: Mt. Himalayas</h5>
-              <p class="card-text">a region of high peaks and glaciers.
-              </p>
+              <p class="card-text">A region of high peaks and glaciers.</p>
               <a href="AO8/himalayas/banner.html" class="card-link">View Project</a>
             </div>
           </div>
@@ -259,21 +260,17 @@
   <section class="about" id="about">
     <div class="container">
       <h3 class="text-center mb-5">About</h3>
-      <div class="row justify-content-center align-items-center">
-
+      <div class="glass p-4 row justify-content-center align-items-center">
         <div class="col-md-7 mb-4 mb-md-0">
           <p class="lead fst-italic mb-4" style="color: #7d5f3d;">
             “Creativity and code combine to build meaningful digital experiences.”
           </p>
-          <p>Hello! I'm Linel, a second-year student pursuing a degree in Diploma in Information Technology (DIT) at PUP
-            Sto. Tomas. I’m passionate about web development and eager to apply what I learn through exciting projects
-            and real-world experience. </p>
+          <p>Hello! I'm Linel, a second-year student pursuing a degree in Diploma in Information Technology (DIT) at PUP Sto. Tomas. I’m passionate about web development and eager to apply what I learn through exciting projects and real-world experience.</p>
           <ul class="list-unstyled mt-3">
-            <li><strong>Location:</strong> City of Sto.tomas Batangas</li>
+            <li><strong>Location:</strong> City of Sto. Tomas, Batangas</li>
             <li><strong>School:</strong> Polytechnic University of the Philippines</li>
           </ul>
         </div>
-
         <div class="col-md-4">
           <h5 class="mb-3" style="color: #5d3a1a;">Skills & Technologies</h5>
           <div class="d-flex flex-wrap gap-2">
@@ -286,12 +283,11 @@
             <span class="badge bg-warning text-dark px-3 py-2">UX Design</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <footer id="contact">
+  <footer id="contact" class="glass mx-3 my-5 rounded-4">
     <div class="container text-center">
       <h4 class="mb-3">
         <button class="btn btn-contact" type="button" data-bs-toggle="collapse" data-bs-target="#contactInfo"
