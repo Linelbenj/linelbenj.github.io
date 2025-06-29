@@ -9,7 +9,10 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="style.css">
+</head>
 
 </head>
 
@@ -22,26 +25,25 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-contact ms-3" href="#contact">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="btn btn-contact ms-3" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="glass p-4 d-flex flex-column align-items-center text-center">
-      <div class="hero-image"></div>
-      <div class="hero-text">
-        <h1>I’m Linel.<br><span class="gray"> Web Developer / IT Student</span></h1>
-        <p>I'm a passionate student who's excited to work on awesome projects.</p>
+  <section class="hero" data-aos="fade-up">
+    <div class="glass p-4 container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 text-center">
+          <div class="hero-image mx-auto"></div>
+        </div>
+        <div class="col-md-8 text-md-start text-center hero-text">
+          <h1>I’m Linel.<br><span class="gray" id="typed"></span></h1>
+          <p>I'm a passionate student who's excited to work on awesome projects.</p>
+          <a href="resume.pdf" class="btn btn-contact mt-3" target="_blank">Download Resume</a>
+        </div>
       </div>
     </div>
   </section>
@@ -104,7 +106,7 @@
     </div>
   </section>
 
-  <section class="about" id="about">
+  <section class="about" id="about" data-aos="fade-up">
     <div class="container">
       <h3 class="text-center mb-5">About</h3>
       <div class="glass p-4 row justify-content-center align-items-center">
@@ -112,9 +114,9 @@
           <p class="lead fst-italic mb-4" style="color: #7d5f3d;">
             “Creativity and code combine to build meaningful digital experiences.”
           </p>
-          <p>Hello! I'm Linel, a second-year student pursuing a degree in Diploma in Information Technology (DIT) at PUP
-            Sto. Tomas. I’m passionate about web development and eager to apply what I learn through exciting projects
-            and real-world experience.</p>
+          <p>Hello! I'm Linel, a second-year student pursuing a degree in Diploma in Information Technology (DIT) at
+            PUP Sto. Tomas. I’m passionate about web development and eager to apply what I learn through exciting
+            projects and real-world experience.</p>
           <ul class="list-unstyled mt-3">
             <li><strong>Location:</strong> City of Sto. Tomas, Batangas</li>
             <li><strong>School:</strong> Polytechnic University of the Philippines</li>
@@ -127,16 +129,15 @@
             <span class="badge bg-warning text-dark px-3 py-2">CSS</span>
             <span class="badge bg-warning text-dark px-3 py-2">JavaScript</span>
             <span class="badge bg-warning text-dark px-3 py-2">Bootstrap</span>
-            <span class="badge bg-warning text-dark px-3 py-2">API Integration</span>
-            <span class="badge bg-warning text-dark px-3 py-2">Responsive Design</span>
-            <span class="badge bg-warning text-dark px-3 py-2">UX Design</span>
+            <span class="badge bg-warning text-dark px-3 py-2">Github</span>
+            <span class="badge bg-warning text-dark px-3 py-2">Git</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact" class="glass mx-3 my-5 rounded-4">
+  <footer id="contact" class="glass mx-3 my-5 rounded-4" data-aos="fade-up">
     <div class="container text-center">
       <h4 class="mb-3">
         <button class="btn btn-contact" type="button" data-bs-toggle="collapse" data-bs-target="#contactInfo"
@@ -144,25 +145,33 @@
           Contact Information
         </button>
       </h4>
-
       <div class="collapse mt-3" id="contactInfo">
-        <p>Email: <a href="mailto:montalinelmartin@gmail.com">montalinelmartin@gmail.com</a></p>
-        <p>Phone: <a href="tel:+639627730466">+63 962 773 0466</a></p>
+        <p><i class="bi bi-envelope-fill"></i> <a
+            href="mailto:montalinelmartin@gmail.com">montalinelmartin@gmail.com</a></p>
         <p>
-          <a href="https://www.facebook.com/linelio22/" target="_blank">
+          <a href="https://www.facebook.com/linelio22/" target="_blank" title="Facebook">
             <i class="bi bi-facebook"></i> Facebook
           </a> |
-          <a href="https://www.instagram.com/benjmonta/" target="_blank">
+          <a href="https://www.instagram.com/benjmonta/" target="_blank" title="Instagram">
             <i class="bi bi-instagram"></i> Instagram
           </a>
         </p>
       </div>
-
       <p class="mt-3">&copy; 2025 Linel Benj Martin M. Monta. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    new Typed('#typed', {
+      strings: ['Web Developer', 'IT Student', 'Focused on creating engaging website experiences'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
 </body>
 
 </html>
